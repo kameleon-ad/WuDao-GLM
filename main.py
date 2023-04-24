@@ -3,9 +3,13 @@ from transformers import AutoTokenizer, AutoModel
 from absl import app
 
 
+GLM = "BAAI/glm-10b-chinese"
+ChatGLM = "THUDM/chatglm-6b"
+
+
 def main(_):
-    tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True)
-    model = AutoModel.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True).half().cuda()
+    tokenizer = AutoTokenizer.from_pretrained(GLM, trust_remote_code=True)
+    model = AutoModel.from_pretrained(GLM, trust_remote_code=True).half().cuda()
 
     response, history = model.chat(tokenizer, "你好", history=[])
     print(response)
