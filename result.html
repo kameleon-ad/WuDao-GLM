@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>ChatGLM & GLM</title>
+</head>
+<body>
+<pre><font color="#4E9A06"><b>eagle@EagleCom</b></font>:<font color="#3465A4"><b>~/PycharmProjects</b></font>$ ssh ubuntu@192.18.134.220
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.15.0-52-generic x86_64)
+ .============.
+ ||   __      ||    _                    _         _
+ ||   \_\     ||   | |    __ _ _ __ ___ | |__   __| | __ _
+ ||    \_\    ||   | |   / _` | &apos;_ ` _ \| &apos;_ \ / _` |/ _` |
+ ||   /_λ_\   ||   | |__| (_| | | | | | | |_) | (_| | (_| |
+ ||  /_/ \_\  ||   |_____\__,_|_| |_| |_|_.__/ \__,_|\__,_|
+  .============.                                  GPU CLOUD
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Apr 24 17:20:36 UTC 2023
+
+  System load:  0.27             Processes:                387
+  Usage of /:   2.7% of 1.32TB   Users logged in:          0
+  Memory usage: 1%               IPv4 address for docker0: 172.17.0.1
+  Swap usage:   0%               IPv4 address for enp5s0:  10.19.59.245
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+3 updates can be applied immediately.
+3 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+New release &apos;22.04.2 LTS&apos; available.
+Run &apos;do-release-upgrade&apos; to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
+
+Last login: Mon Apr 24 17:19:26 2023 from 23.106.169.120
+<font color="#4E9A06"><b>ubuntu@192-18-134-220</b></font>:<font color="#3465A4"><b>~</b></font>$ cd PycharmProjects/WuDao-GLM/
+<font color="#4E9A06"><b>ubuntu@192-18-134-220</b></font>:<font color="#3465A4"><b>~/PycharmProjects/WuDao-GLM</b></font>$ python main.py 
+Explicitly passing a `revision` is encouraged when loading a model with custom code to ensure no malicious code has been contributed in a newer revision.
+Explicitly passing a `revision` is encouraged when loading a configuration with custom code to ensure no malicious code has been contributed in a newer revision.
+Explicitly passing a `revision` is encouraged when loading a model with custom code to ensure no malicious code has been contributed in a newer revision.
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:06&lt;00:00,  1.23it/s]
+W0424 17:20:55.537962 140400186529600 logging.py:295] The dtype of attention mask (torch.int64) is not bool
+2023-04-24 17:20:57.874843: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-04-24 17:20:57.913042: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-04-24 17:20:58.445722: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+--------------------------------------------------------------------------
+WARNING: No preset parameters were found for the device that Open MPI
+detected:
+
+  Local host:            192-18-134-220
+  Device name:           mlx5_0
+  Device vendor ID:      0x02c9
+  Device vendor part ID: 4126
+
+Default device parameters will be used, which may result in lower
+performance.  You can edit any of the files specified by the
+btl_openib_device_param_files MCA parameter to set values for your
+device.
+
+NOTE: You can turn off this warning by setting the MCA parameter
+      btl_openib_warn_no_device_params_found to 0.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+No OpenFabrics connection schemes reported that they were able to be
+used on a specific port.  As such, the openib BTL (OpenFabrics
+support) will be disabled for this port.
+
+  Local host:           192-18-134-220
+  Local device:         mlx5_0
+  Local port:           1
+  CPCs attempted:       udcm
+--------------------------------------------------------------------------
+2023-04-24 17:20:59.002796: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:996] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2023-04-24 17:20:59.004079: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:996] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2023-04-24 17:20:59.004646: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:996] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+I0424 17:20:59.271286 140400186529600 utils.py:129] Note: NumExpr detected 30 cores but &quot;NUMEXPR_MAX_THREADS&quot; not set, so enforcing safe limit of 8.
+I0424 17:20:59.271417 140400186529600 utils.py:141] NumExpr defaulting to 8 threads.
+/home/ubuntu/.local/lib/python3.8/site-packages/pandas/core/computation/expressions.py:20: UserWarning: Pandas requires version &apos;2.7.3&apos; or newer of &apos;numexpr&apos; (version &apos;2.7.1&apos; currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+你好👋！我是人工智能助手 ChatGLM-6B，很高兴见到你，欢迎问我任何问题。
+晚上睡不着可能会让人感到困扰和焦虑，但有一些方法可以帮助你入睡。以下是一些可能有用的建议：
+
+1. 建立规律的睡眠时间表：尽可能在相同的时间上床和起床，即使在周末或假期也要尽量保持一致。
+
+2. 创造一个舒适的睡眠环境：保持房间安静、凉爽、黑暗和舒适。使用舒适的床垫和枕头，确保卧室符合睡眠需要的温度和湿度。
+
+3. 放松身体和头脑：在睡觉前进行一些放松活动，例如冥想、深呼吸、瑜伽或温水泡脚等，有助于缓解身体和头脑的紧张感。
+
+4. 避免在睡觉前摄入咖啡因、酒精或尼古丁等兴奋剂，因为这些药物可能会影响睡眠质量。
+
+5. 避免在睡觉前看电视、使用电脑或手机等电子设备，因为这些设备会发出蓝光，可能会干扰身体分泌褪黑素，从而影响睡眠。
+
+6. 如果躺在床上30 分钟后仍然无法入睡，不要继续躺在床上，可以起床做一些放松的活动，例如阅读或听音乐等，直到感到困倦。
+
+如果这些方法都没有帮助入睡，建议咨询医生或专业心理医生，了解是否存在睡眠障碍或其他健康问题。
+<font color="#4E9A06"><b>ubuntu@192-18-134-220</b></font>:<font color="#3465A4"><b>~/PycharmProjects/WuDao-GLM</b></font>$ 
+
+</pre>
+</body>
+</html>
